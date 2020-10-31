@@ -1,0 +1,224 @@
+body {
+	background-color: #DCE1E3;
+	box-sizing: border-box;
+	font-family: tahoma;
+}
+
+.content {
+	margin: 0 auto;
+	width: 1000px;
+	background-color: #FEFEFE;
+	padding: 50px;
+}
+
+.logo {
+	max-width: 200px;
+}
+
+.logotype {
+	font-family: Din-cond;
+}
+
+.phone {
+	position: relative;
+	left: 500px;
+	font-size: 18px;
+}
+
+.phone:before {
+	content: url('/images/phone.svg');
+	vertical-align: middle;
+	margin-right: 12px;
+}
+
+.button_link {
+	position: relative;
+	left: 560px;
+	border: 2px solid #0066B3;
+	padding: 10px 20px;
+}
+
+.button_link:hover {
+	background-color: #0066B3;
+	color: #fefefe;
+}
+
+.button_link a {
+	text-decoration: none;
+	color: #0066B3;
+}
+
+.button_link a:hover {
+}
+
+.button_link a:visited {
+	color: #0066B3;
+}
+
+.nav {
+	max-width: 100%;
+	background-color: #0066B3;
+	display: block;
+	box-sizing: border-box;
+	border-radius: 5px;
+	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7);
+	padding: 10px 40px;
+}
+
+.nav a {
+	font-family: Din;
+	font-size: 18px;
+	line-height: 25px;
+	text-decoration: none;
+	color: #FEFEFE;
+	margin: 0 10px;
+}
+
+.nav a:visited {
+	color: #FEFEFE;
+}
+
+.nav a:hover {
+	color: #FEFEFE;
+	text-decoration: underline;
+}
+
+.search {
+	width: 200px;
+	display: block;
+	margin-left: auto;
+	float: right;
+	padding: 3px;
+	background-color: #0A3E6D;
+	border-radius: 4px;
+	border: 1px solid #3272AD;
+  	box-shadow: 1px 2px 2px rgba(0,0,0,.5) inset; 
+  	color: #fefefe;
+}
+
+.number {
+	font-family: IBM;
+}
+
+header *{
+	display: inline-block;
+	margin: auto;
+	vertical-align: middle;
+}
+
+.current_page_name {
+	font-size: 16px;
+	color: #999;
+	margin-top: 10px;
+}
+
+.user_name {
+	font-family: Din;
+	font-size: 50px;
+	letter-spacing: -1px;
+	margin: 20px 0;
+}
+
+.blue_text {
+	color: #0066B3;
+}
+
+.personal {
+	margin: 120px 0 150px;
+	display: inline-block;
+}
+
+.paying {
+	display: inline-block;
+	font-size: 20px;
+	padding-left: 200px;
+}
+
+.pay_button {
+	color: #fefefe;
+	padding: 12px 35px;
+	background-color: #0066B3;
+	border: none;
+	border-radius: 8px;
+	margin-right: 10px;
+}
+
+.card_number {
+	float: right;
+	text-align: center;
+}
+
+.total_price {
+	font-size: 80px;
+	color: #30D03A;
+}
+
+h2 {
+	font-family: Din;
+	font-size: 36px;
+	letter-spacing: -1px;
+}
+
+.stat_form {
+  	box-shadow: 2px 2px 25px rgba(0, 102, 179, .2); 
+  	border-radius: 25px;
+  	padding: 35px;
+  	margin: 30px 0;
+}
+
+.stat_form select {
+	border: 3px solid #0066B3;
+	border-radius: 6px;
+	padding: 4px 8px;
+	margin-right: 35px;
+}
+
+table {
+	margin: 10px 0;
+}
+
+th {
+	font-family: Din;
+	font-size: 25px;
+	padding-bottom: 10px;
+	padding: 10px 5px 5px 20px;
+}
+
+td {
+	text-align: right;
+	vertical-align: middle;
+	padding: 2px 10px;
+}
+
+.device_name {
+	text-align: left;
+	padding-right: 40px;
+}
+
+tr {
+}
+
+.device_color {
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	padding: 0;
+}
+
+
+
+@font-face {
+	font-family: Din;
+	src: url(fonts/PFDinTextCondPro-Regular.ttf);
+}
+
+@font-face {
+	font-family: IBM;
+	src: url(fonts/IBMPlexSans-Medium.ttf);
+}
+
+
+@font-face {
+	font-family: Din;
+	src: url(fonts/DinTextCompPro.ttf);
+}

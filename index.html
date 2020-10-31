@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/reset.css" type="text/css"/>
+	<link rel="stylesheet" href="styles/style.css" type="text/css"/>
+	<title>Потребление электроэнергии</title>
+</head>
+<body>
+	<div class="content">
+		<header>
+			<div class="logo">
+				<img class="logo" src="images/rosseti_logo.png" alt="Логотип Россетей">
+				<p class="logotype">ОАО «МРСК Урала»</p>
+			</div>
+			<p class="number phone">8 800 2200 220</p>
+			<div class="button_link"><a href="">Выйти</a></div>
+		</header>
+
+		<nav>
+			<div class="nav">
+				<a class="nav_link" href="">О компании</a>
+				<a class="nav_link" href="">Клиентам</a>
+				<a class="nav_link" href="">Пресс-центр</a>
+				<a class="nav_link" href="">Акционерам и инвесторам</a>
+				<a class="nav_link" href="">Кадровая политика</a>
+				<input class="search" type="text" size="40">
+			</div>
+		</nav>
+
+		<main>
+			<p class="current_page_name">Личный кабинет</p>
+			<section class="main_info">
+				<div class="personal">
+					<p class="user_name">Иванов Иван Иванович</p>
+					<p class="user_arddress">
+						<span class="blue_text">Адрес: </span>
+						457320, г. Тюленино, ул. Родники, дом 75, квартира 185
+					</p>
+				</div>
+
+				<div class="paying">
+					<p>Сумма к оплате</p>
+					<p class="total_price number">880 ₽</p>
+					<button class="pay_button">Оплатить</button>
+					<div class="card_number">
+						<img src="images/visa.png">
+						<p class="number">1234</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="statistic">
+				<h2>Статистика энергопотребления</h2>
+
+				<div class="stat_form">
+					<select name="period">
+						  <option value="День">День</option>
+						  <option value="Неделя">Неделя</option>
+						  <option selected value="Месяц">Месяц</option>
+						  <option value="Квартал">Квартал</option>
+						  <option value="Год">Год</option>
+					</select>
+
+					<select name="sorting">
+						  <option value="По приоритету">По приоритету</option>
+						  <option selected value="По потреблению">По потреблению</option>
+						  <option value="По минимальному">По минимальному</option>
+					</select>
+
+					<select name="Device">
+						  <option selected value="Все устройства">Все устройства</option>
+						  <option value="Компьютер">Компьютер</option>
+						  <option value="Освещение">Освещение</option>
+						  <option value="Холодильник">Холодильник</option>
+						  <option value="Стиральная машина">Стиральная машина</option>
+						  <option value="Микроволновка">Микроволновка</option>
+					</select>
+
+					<table id="energy_usage">
+						<tr>
+							<th></th>
+							<th>Устройство</th>
+							<th>Потребление</th>
+							<th>Стоимость</th>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Главный счетчик</td>
+							<td>220 кВт</td>
+							<td>880 ₽</td>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Компьютер</td>
+							<td>100 кВт</td>
+							<td>400 ₽</td>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Освещение</td>
+							<td>60 кВт</td>
+							<td>240 ₽</td>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Холодильник</td>
+							<td>27,5 кВт</td>
+							<td>110 ₽</td>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Стиральная машина</td>
+							<td>9,3 кВт</td>
+							<td>37,2 ₽</td>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Микроволновка</td>
+							<td>5,1 кВт</td>
+							<td>20,4 ₽</td>
+						</tr>
+
+						<tr>
+							<td><div class="device_color"></div></td>
+							<td class="device_name">Разное</td>
+							<td>18,1 кВт</td>
+							<td>72,4 ₽</td>
+						</tr>
+					</table>
+
+					<div class="diagram"></div>
+
+				</div>
+			</section>
+
+
+		</main>
+
+		<footer>
+			<img src="footer.jpg">
+		</footer>
+	</div>
+</body>
+</html>
