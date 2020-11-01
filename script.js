@@ -33,27 +33,6 @@ function tax() {
 	return 4;
 }
 
-function select_out() {
-	let year = document.getElementById('year_select');
-	let month = document.getElementById('month_select');
-	let sorting = document.getElementById('sorting_select');
-	let device = document.getElementById('device_select');
-
-	let selection = [];
-
-	let selected_device = document.getElementById("device_select").value;
-	if (selected_device == "Все устройства") {
-
-	}
-	else {
-		for (let device of devices) {
-			
-		}
-	}
-
-	
-	return selection;
-}
 
 function update() {
 
@@ -68,12 +47,7 @@ function update() {
 		}	
 	}
 
-	let select_list = document.getElementById(`device_select`);
-	select_list.innerHTML = "";
-	select_list.innerHTML += `<option selected value="Все устройства">Все устройства</option>`;
-	for (let device of devices) {
-		select_list.innerHTML += `<option value="` + device.name + `">` + device.name +`</option>`;
-	}
+	
 
 	let table = document.getElementById(`energy_usage`);
 	table.innerHTML = "";
@@ -95,13 +69,36 @@ function update() {
 	document.getElementById(`total_price`).innerHTML = price + " ₽";
 
 	for (let device of devices) {
-		let device_usage = deviceUsage(device);
-		price = device_usage * tax();
+		let deviceAgr = {color: device.color, name: device.name, usage: 0}
+
+		for (let data of device.data) {
+			if (data.date.split('-')[0] == year.value && data.date.split('-')[1] == month.value) {
+				deviceAgr.usage += parseFloat((data.value/100));
+			}
+		}
+		deviceAgr.usage = deviceAgr.usage.toFixed(1);
+		price = deviceAgr.usage * tax();
 		table.innerHTML += `<tr>
-							<td><div class="device_color" style="background-color: `+device.color+`"></div></td>
-							<td class="device_name">`+device.name+`</td>
-							<td>`+device_usage+` кВт</td>
+							<td><div class="device_color" style="background-color: `+deviceAgr.color+`"></div></td>
+							<td class="device_name">`+deviceAgr.name+`</td>
+							<td>`+deviceAgr.usage+` кВт</td>
 							<td>`+price+` ₽</td>
 						</tr>`
 	}
+}
+
+function sort() {
+	let order = document.getElementById('sorting_select');
+	if (order.value == "По приоритету") {
+
+	}
+
+	else if (order.value == "По потреблению") {
+
+	}
+
+	else if (order.value == "По минимальному") {
+
+	}
+
 }

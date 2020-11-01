@@ -44,10 +44,10 @@
 
 				<div class="paying">
 					<p>Сумма к оплате</p>
-					<p id="total_price">880 ₽</p>
+					<p id="total_price" class="total_price">880 ₽</p>
 					<button class="pay_button" onclick="alert('Оплачено!');">Оплатить</button>
 					<div class="card_number">
-						<img src="images/visa.png">
+						<img src="images/Visa.png">
 						<p class="number">1234</p>
 					</div>
 				</div>
@@ -69,28 +69,36 @@
 					<select id="month_select" onchange="update();">
 						  <option selected disabled value="Месяц">Месяц</option>
 						  <option value="Все">Все</option>
-						  <option value="Январь">Январь</option>
-						  <option value="Февраль">Февраль</option>
-						  <option value="Март">Март</option>
-						  <option value="Апрель">Апрель</option>
-						  <option value="Июнь">Июнь</option>
-						  <option value="Июль">Июль</option>
-						  <option value="Август">Август</option>
-						  <option value="Сентябрь">Сентябрь</option>
-						  <option value="Октябрь">Октябрь</option>
-						  <option value="Ноябрь">Ноябрь</option>
-						  <option value="Декабрь">Декабрь</option>
+						  <option value="1">Январь</option>
+						  <option value="2">Февраль</option>
+						  <option value="3">Март</option>
+						  <option value="4">Апрель</option>
+						  <option value="5">Май</option>
+						  <option value="6">Июнь</option>
+						  <option value="7">Июль</option>
+						  <option value="8">Август</option>
+						  <option value="9">Сентябрь</option>
+						  <option value="10">Октябрь</option>
+						  <option value="11">Ноябрь</option>
+						  <option value="12">Декабрь</option>
 					</select>
 
-					<select id="sorting_select" onchange="update();">
+					<select id="sorting_select" onchange="sort();">
 						  <option value="По приоритету">По приоритету</option>
 						  <option selected value="По потреблению">По потреблению</option>
 						  <option value="По минимальному">По минимальному</option>
 					</select>
-
+<!--
 					<select id="device_select" onchange="update();">
+						  <option value="Все устройства">Все устройства</option>
+						  <option value="Компьютер">Компьютер</option>
+						  <option value="Освещение">Освещение</option>
+						  <option value="Холодильник">Холодильник</option>
+						  <option value="Стиральная машина">Стиральная машина</option>
+						  <option value="Микроволновка">Микроволновка</option>
+						  <option value="Разное">Разное</option>
 					</select>
-
+-->
 					<table id="energy_usage">
 						<tr>
 							<th></th>
