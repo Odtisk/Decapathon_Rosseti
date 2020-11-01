@@ -38,7 +38,7 @@ function update() {
 
 	let year = document.getElementById('year_select');
 	let month = document.getElementById('month_select');
-	if (year.value == "Все время") {
+	if (year.value == "0") {
 		month.setAttribute("disabled","true");
 	} 
 	else {
@@ -48,6 +48,8 @@ function update() {
 	}
 
 	
+	let total_usage = 0;
+	let price = 0;
 
 	let table = document.getElementById(`energy_usage`);
 	table.innerHTML = "";
@@ -58,26 +60,26 @@ function update() {
 						<th>Стоимость</th>
 					</tr>`;
 
-	let total_usage = totalUsage();
-	let price = total_usage * tax();
-	table.innerHTML += `<tr>
-						<td><div class="device_color"></div></td>
-						<td class="device_name">Главный счетчик</td>
-						<td>`+total_usage+` кВт</td>
-						<td>`+price+` ₽</td>
-					</tr>`;
-	document.getElementById(`total_price`).innerHTML = price + " ₽";
+
 
 	for (let device of devices) {
+
 		let deviceAgr = {color: device.color, name: device.name, usage: 0}
 
 		for (let data of device.data) {
-			if (data.date.split('-')[0] == year.value && data.date.split('-')[1] == month.value) {
+			if (year.value == "0") {
+				deviceAgr.usage += parseFloat((data.value/100));
+			}
+			else if (month.value == "0") {
+				deviceAgr.usage += parseFloat((data.value/100));
+			}
+			else if (data.date.split('-')[0] == year.value && data.date.split('-')[1] == month.value) {
 				deviceAgr.usage += parseFloat((data.value/100));
 			}
 		}
+			total_usage += deviceAgr.usage;
 		deviceAgr.usage = deviceAgr.usage.toFixed(1);
-		price = deviceAgr.usage * tax();
+		price = (deviceAgr.usage * tax()).toFixed(1);
 		table.innerHTML += `<tr>
 							<td><div class="device_color" style="background-color: `+deviceAgr.color+`"></div></td>
 							<td class="device_name">`+deviceAgr.name+`</td>
@@ -85,6 +87,14 @@ function update() {
 							<td>`+price+` ₽</td>
 						</tr>`
 	}
+	price = (total_usage * tax()).toFixed(1);
+	table.innerHTML += `<tr>
+						<td><div class="device_color"></div></td>
+						<td class="device_name">Главный счетчик</td>
+						<td>`+total_usage.toFixed(1)+` кВт</td>
+						<td>`+price+` ₽</td>
+					</tr>`;
+	document.getElementById(`total_price`).innerHTML = price + " ₽";
 }
 
 function sort() {
