@@ -5,9 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles/reset.css" type="text/css"/>
 	<link rel="stylesheet" href="styles/style.css" type="text/css"/>
+	<script src="database.js"></script>
+	<script src="script.js"></script>
 	<title>Потребление электроэнергии</title>
 </head>
-<body>
+<body onload="update()">
 	<div class="content">
 		<header>
 			<div class="logo">
@@ -42,8 +44,8 @@
 
 				<div class="paying">
 					<p>Сумма к оплате</p>
-					<p class="total_price number">880 ₽</p>
-					<button class="pay_button">Оплатить</button>
+					<p id="total_price">880 ₽</p>
+					<button class="pay_button" onclick="alert('Оплачено!');">Оплатить</button>
 					<div class="card_number">
 						<img src="images/visa.png">
 						<p class="number">1234</p>
@@ -55,27 +57,38 @@
 				<h2>Статистика энергопотребления</h2>
 
 				<div class="stat_form">
-					<select name="period">
-						  <option value="День">День</option>
-						  <option value="Неделя">Неделя</option>
-						  <option selected value="Месяц">Месяц</option>
-						  <option value="Квартал">Квартал</option>
-						  <option value="Год">Год</option>
+					<select id="year_select" onchange="update();">
+						  <option selected disabled value="Год">Год</option>
+						  <option value="Все время">Все время</option>
+						  <option disabled value="2020">2020</option>
+						  <option value="2019">2019</option>
+						  <option disabled value="2018">2018</option>
+						  <option disabled value="2017">2017</option>
 					</select>
 
-					<select name="sorting">
+					<select id="month_select" onchange="update();">
+						  <option selected disabled value="Месяц">Месяц</option>
+						  <option value="Все">Все</option>
+						  <option value="Январь">Январь</option>
+						  <option value="Февраль">Февраль</option>
+						  <option value="Март">Март</option>
+						  <option value="Апрель">Апрель</option>
+						  <option value="Июнь">Июнь</option>
+						  <option value="Июль">Июль</option>
+						  <option value="Август">Август</option>
+						  <option value="Сентябрь">Сентябрь</option>
+						  <option value="Октябрь">Октябрь</option>
+						  <option value="Ноябрь">Ноябрь</option>
+						  <option value="Декабрь">Декабрь</option>
+					</select>
+
+					<select id="sorting_select" onchange="update();">
 						  <option value="По приоритету">По приоритету</option>
 						  <option selected value="По потреблению">По потреблению</option>
 						  <option value="По минимальному">По минимальному</option>
 					</select>
 
-					<select name="Device">
-						  <option selected value="Все устройства">Все устройства</option>
-						  <option value="Компьютер">Компьютер</option>
-						  <option value="Освещение">Освещение</option>
-						  <option value="Холодильник">Холодильник</option>
-						  <option value="Стиральная машина">Стиральная машина</option>
-						  <option value="Микроволновка">Микроволновка</option>
+					<select id="device_select" onchange="update();">
 					</select>
 
 					<table id="energy_usage">

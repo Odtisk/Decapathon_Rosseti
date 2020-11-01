@@ -148,7 +148,7 @@ header *{
 	text-align: center;
 }
 
-.total_price {
+#total_price {
 	font-size: 80px;
 	color: #30D03A;
 }
@@ -201,7 +201,6 @@ tr {
 .device_color {
 	width: 20px;
 	height: 20px;
-	background-color: green;
 	padding: 0;
 }
 
